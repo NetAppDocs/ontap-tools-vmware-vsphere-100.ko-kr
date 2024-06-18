@@ -1,0 +1,27 @@
+---
+permalink: configure/add_vcenter.html 
+sidebar: sidebar 
+keywords:  
+summary: 'vCenter는 호스트, VM(가상 머신) 및 스토리지 백엔드를 제어할 수 있는 중앙 관리 플랫폼입니다.' 
+---
+= vCenter를 추가합니다
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+vCenter는 호스트, VM(가상 머신) 및 스토리지 백엔드를 제어할 수 있는 중앙 관리 플랫폼입니다.
+
+* 이 작업에 대한 정보 *
+
+하나의 VMware vCenter 10.0용 ONTAP 툴 인스턴스를 사용하여 여러 vCenter를 추가하고 관리할 수 있습니다.
+
+* 단계 *
+
+. 을 시작합니다 `\https://loadBalanceIP:8443/virtualization/ui/` 구축하는 동안 제공된 ONTAP 도구 관리자 자격 증명을 사용하여 브라우저에서
+. 사이드바에서 vCenter를 선택합니다
+. vCenter IP 주소/호스트 이름, 사용자 이름, 암호 및 포트가 있는 온보드 vCenter에 * 추가 * 를 선택합니다.
+
+
+을 참조하십시오 link:../configure/task_configure_user_role_and_privileges.html["관리자가 아닌 전역 범위 클러스터 사용자에게 필요한 최소 권한 목록입니다"].

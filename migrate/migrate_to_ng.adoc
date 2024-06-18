@@ -1,0 +1,101 @@
+---
+permalink: migrate/migrate_to_ng.html 
+sidebar: sidebar 
+keywords: migrate 
+summary: 스토리지 데이터를 마이그레이션할 때 REST API를 사용하여 스토리지 백엔드를 수동으로 온보드합니다. VASA 공급자 데이터를 마이그레이션할 때 기존 Derby 데이터베이스에서 데이터를 내보내고 MongoDB 데이터베이스로 가져옵니다. 
+---
+= ONTAP 도구의 최신 릴리즈로 마이그레이션하십시오
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+스토리지 데이터를 마이그레이션할 때 REST API를 사용하여 스토리지 백엔드를 수동으로 온보드합니다. VASA 공급자 데이터를 마이그레이션할 때 기존 Derby 데이터베이스에서 데이터를 내보내고 MongoDB 데이터베이스로 가져옵니다.
+
+
+NOTE: 설정 시 VASA 공급자 기능만 제공하는 경우에만 기존 설정을 마이그레이션하는 것이 좋습니다. 기존/NVMe 데이터 저장소, VVOL 복제 등과 같은 기능이 있고 SRA가 기존 버전에서 활성화된 경우, VMware vSphere 10.0용 ONTAP 툴로 설정을 마이그레이션하지 않는 것이 좋습니다.
+
+* 이 작업에 대한 정보 *
+
+VMware vSphere 9.10D2 및 9.11D4 릴리즈용 ONTAP 툴에서 10.0 릴리즈로의 마이그레이션이 지원됩니다. 마이그레이션 원본:
+* VMware vSphere 9.10 릴리즈용 ONTAP 툴, 먼저 9.10D2 릴리즈로 업그레이드한 다음 10.0 릴리즈로 마이그레이션
+* VMware vSphere 9.11 릴리즈용 ONTAP 툴, 먼저 9.11D4 릴리즈로 업그레이드한 다음 10.0 릴리즈로 마이그레이션
+
+
+NOTE: 기존 사용자는 9.10D 패치 또는 9.11D 패치로 업그레이드하기 전에 9.10/9.11에서 OVA 백업을 수행해야 합니다
+
+* 단계 *
+
+. VMware vSphere 9.10D2 및 9.11D4용 기존 ONTAP 툴에서 더비 포트 1527을 활성화합니다. 포트를 활성화하려면 루트 사용자로 CLI에 로그인하고 다음 명령을 실행합니다.
++
+[listing]
+----
+iptables -I INPUT 1 -p tcp --dport 1527 -j ACCEPT
+----
+. VMware vSphere 10.0 릴리즈용 ONTAP 툴용 OVA 구축 을 참조하십시오 link:../deploy/qsg_10.html["ONTAP 도구 빠른 시작"]
+. VMware vSphere 10.0 릴리즈용 ONTAP 툴로 마이그레이션할 vCenter를 추가합니다. 을 참조하십시오 link:../configure/add_vcenter.html["vCenter를 추가합니다"].
+. 원격 플러그인 vCenter API에서 로컬로 스토리지 백엔드를 온보드합니다. 을 참조하십시오 link:../configure/onboard_svm.html["온보드 스토리지 백엔드"]. 마이그레이션을 위해 스토리지를 로컬 범위로 추가합니다.
+. 마이그레이션하려면 다음 API를 사용하십시오.
++
+[listing]
+----
+/api/v1/vcenters/{vcguid}/migration-jobs
+
+{
+  "otv_ip": "10.10.10.10",
+  "vasa_provider_credentials": {
+    "username": "Administrator",
+    "password": "password"
+  }
+}
+----
++
+위의 API 호출은 상태 확인에 사용할 수 있는 jobid를 제공합니다.
+
+. 다음 URI를 사용하여 상태를 확인합니다.
++
+[listing]
+----
+https://xx.xx.xx.xxx:8443/virtualization/api/jobmanager/v2/jobs/<JobID>?includeSubJobsAndTasks=true
+----
+. 작업이 완료되면 마이그레이션 보고서를 검증합니다. jobData의 일부로 작업 응답의 보고서를 볼 수 있습니다.
+. vCenter 및 에 ONTAP 툴 스토리지 공급자 10.0을 추가합니다 link:../configure/register_vasa.html["vCenter에 VASA Provider를 등록합니다"].
+. ONTAP 툴 스토리지 공급자 9.10/9.11 VASA 공급자 서비스를 중지합니다(유지 관리 콘솔에서 VASA 공급자 중지).
++
+NetApp은 VASA 공급자를 삭제하지 않는 것이 좋습니다.
+
++
+이전 VASA 공급자가 중지되면 vCenter가 VMware vSphere 10.0용 ONTAP 툴로 페일오버됩니다. 모든 데이터 저장소 및 VM에 액세스할 수 있으며 VMware vSphere 10.0용 ONTAP 툴을 통해 제공됩니다.
+
+. 다음 API를 사용하여 패치 마이그레이션을 수행합니다.
++
+[listing]
+----
+/virtualization/api/v1/vcenters/{vcguid}/migration-jobs/{migration_id}
+----
++
+패치 작업을 위한 요청 본문이 비어 있습니다.
+
++
+
+NOTE: UUID는 사후 마이그레이션 API의 응답으로 반환된 마이그레이션 uuid입니다.
+
++
+패치 마이그레이션 API가 성공하면 모든 VM이 스토리지 정책을 준수합니다.
+
+
+
+마이그레이션을 위한 API 삭제:
+
+[listing]
+----
+Delete /virtualization/api/v1/vcenters/{vcguid}/migration-jobs/{migration_id}
+----
+이 API는 마이그레이션 ID별 마이그레이션을 삭제하고 지정된 vCenter에서 마이그레이션을 삭제합니다.
+
+마이그레이션에 성공하고 ONTAP Tools 10.0을 vCenter에 등록한 후 다음을 수행합니다.
+
+* 모든 호스트에서 인증서를 새로 고칩니다.
+* 데이터 저장소(DS) 및 가상 머신(VM) 작업을 수행하기 전에 잠시 기다립니다. 대기 시간은 설정에 있는 호스트, DS 및 VM의 수에 따라 다릅니다. 기다리지 않으면 작업이 간헐적으로 실패할 수 있습니다.
+

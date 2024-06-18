@@ -1,0 +1,39 @@
+---
+permalink: configure/register_vasa.html 
+sidebar: sidebar 
+keywords:  
+summary: 자체 서명 인증서 또는 CA 서명 인증서를 사용하여 vCenter에 제공하는 VASA를 등록할 수 있습니다. 자체 서명된 인증서는 VMware CA 핸드셰이크를 사용하여 생성됩니다. 
+---
+= vCenter에 VASA Provider를 등록합니다
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+자체 서명 인증서 또는 CA 서명 인증서를 사용하여 vCenter에 제공하는 VASA를 등록할 수 있습니다. 자체 서명된 인증서는 VMware CA 핸드셰이크를 사용하여 생성됩니다.
+
+* 이 작업에 대한 정보 *
+
+CA 서명 인증서 방법을 사용할 때는 vCenter에 CA 서명 인증서를 두어야 합니다.
+
+* 단계 *
+
+. vCenter Server 로 이동합니다.
+. Configure * > * Storage Providers * 를 선택합니다.
+. 추가 * 아이콘을 클릭합니다.
+. 스토리지 공급자에 대한 접속 정보를 입력합니다.
++
+.. 이름: "ScaleoutVP"와 같은 사용자에게 친숙한 이름
+.. URL: `\https://<name>/virtualization/version.xml` - URL의 이름은 단일 vCenter 구축을 위한 OVA 배포(또는 다중 vCenter 구축을 위한 도메인 이름)에서 제공되는 가상 IP에 해당합니다. URL에 인증서를 추가합니다. 동일한 인증서가 vCenter에 게시됩니다.
+.. OVA를 구축하는 동안 자격 증명:<VASA Provider 사용자 이름>/<VASA Provider 암호> 제공.
+
+
+. VASA가 등록되면 * OK * 를 클릭합니다.
+스토리지 공급자 아래에 나열되고 상태가 온라인 인지 확인합니다.
++
+vCenter에 CA 서명 인증서를 배치한 경우 CA 서명 인증서로 VASA 등록이 계속됩니다. 그렇지 않으면 핸드쉐이킹이 실패하고 등록 기본값은 SSA 인증서입니다.
+
+. 여러 vCenter를 단일 스케일 아웃 VP 인스턴스에 등록할 수 있습니다.
+위에서 설명한 단계를 반복하여 여러 vCenter를 등록합니다.
+

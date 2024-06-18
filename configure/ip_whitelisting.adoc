@@ -1,0 +1,37 @@
+---
+permalink: configure/ip_whitelisting.html 
+sidebar: sidebar 
+keywords:  
+summary: 이 기능을 사용하면 데이터 저장소 마운트 작업에 허용되는 특정 ESXi 호스트 주소를 지정할 수 있습니다. 
+---
+= 네트워크 액세스를 관리합니다
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+이 기능을 사용하면 데이터 저장소 마운트 작업에 허용되는 특정 ESXi 호스트 주소를 지정할 수 있습니다.
+
+ESXi 호스트에 대한 IP 주소가 여러 개인 경우 호스트에서 검색된 모든 IP 주소가 내보내기 정책에 추가됩니다. 내보내기 정책에 모든 IP 주소를 추가하지 않으려면 쉼표로 구분된 목록 또는 범위 또는 CIDR 또는 각 vCenter에 대해 세 개의 IP 주소를 조합하여 화이트리스트된 IP 주소에 대한 설정을 제공하십시오.
+
+설정이 제공되지 않으면 내보내기 정책은 사전 마운트 단계에서 검색된 모든 IP 주소를 추가합니다. 설정이 제공되는 경우 ONTAP 도구는 화이트리스트된 IP 또는 범위에 속하는 IP만 추가합니다. 호스트의 IP가 화이트리스트된 IP에 속하지 않으면 해당 호스트의 마운트가 실패합니다.
+
+기본적으로 모든 호스트 IP가 엑스포트 정책에 추가됩니다.
+
+다음 API를 사용하여 화이트리스팅을 위한 IP 주소를 추가합니다.
+
+[listing]
+----
+patch /api/v1/vcenters/{vcguid}/settings/ip-whitelist
+
+{
+    value: string
+}
+
+GET /api/v1/vcenters/{vcguid}/settings/ip-whitelist
+
+{
+    value: string
+}
+----

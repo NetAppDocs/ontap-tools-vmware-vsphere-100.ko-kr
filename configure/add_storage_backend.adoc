@@ -1,0 +1,30 @@
+---
+permalink: configure/add_storage_backend.html 
+sidebar: sidebar 
+keywords:  
+summary: 스토리지 백엔드는 EXSi 호스트가 데이터 스토리지에 사용하는 시스템입니다. 
+---
+= 스토리지 백엔드를 추가합니다
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+스토리지 백엔드는 EXSi 호스트가 데이터 스토리지에 사용하는 시스템입니다.
+
+* 이 작업에 대한 정보 *
+
+이 작업을 통해 ONTAP 클러스터를 온보딩할 수 있습니다.
+
+* 단계 *
+
+. 을 시작합니다 `\https://loadBalanceIP:8443/virtualization/ui/` 구축하는 동안 제공된 ONTAP 도구 관리자 자격 증명을 사용하여 브라우저에서
+. 측면 표시줄에서 * Storage Backend * 를 선택합니다.
+. 추가 * 를 선택합니다.
+. 서버 IP 주소 또는 FQDN, 사용자 이름 및 암호 세부 정보를 입력하고 * 추가 * 를 선택합니다.
++
+
+NOTE: IPv4 관리 LIF만 지원됩니다.
+
+

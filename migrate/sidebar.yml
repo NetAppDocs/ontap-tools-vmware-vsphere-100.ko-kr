@@ -1,0 +1,6 @@
+---
+section: migrate
+title: ONTAP 도구를 마이그레이션합니다
+entries:
+- title: 최신 ONTAP 도구 버전으로 마이그레이션하십시오
+  url: "/migrate/migrate_to_ng.html"

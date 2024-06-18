@@ -1,0 +1,18 @@
+---
+section: concepts
+title: 개념
+entries:
+- title: ONTAP 도구 개요
+  url: "/concepts/concept_ontap_tools_overview.html"
+- title: VVOL을 위한 VASA 공급자 구성
+  url: "/concepts/concept_configure_vvols_datastores.html"
+- title: 역할 기반 액세스 제어
+  entries:
+  - title: ONTAP 툴에 대한 역할 기반 액세스 제어 개요
+    url: "/concepts/concept_vcenter_server_role_based_access_control_features_in_vsc_for_vmware_vsphere.html"
+  - title: VMware vSphere용 ONTAP 툴을 사용할 때 권장되는 ONTAP 역할
+    url: "/concepts/concept_recommended_ontap_roles_when_using_vsc_for_vmware_vsphere.html"
+- title: ONTAP 툴에 대한 고가용성을 구성합니다
+  url: "/concepts/concept_configure_high_availability_for_ontap_tools_for_vmware_vsphere.html"
+- title: AutoSupport
+  url: "/concepts/asup.html"

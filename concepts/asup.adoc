@@ -1,0 +1,19 @@
+---
+permalink: concepts/asup.html 
+sidebar: sidebar 
+keywords:  
+summary: AutoSupport는 시스템의 상태를 능동적으로 모니터링하고 NetApp 기술 지원, 내부 지원 조직 및 지원 파트너에게 메시지를 자동으로 보내는 메커니즘입니다. AutoSupport 기술 지원 메시지를 기본적으로 사용하도록 설정했지만 올바른 옵션을 설정하고 내부 지원 조직에 메시지를 보낼 수 있는 유효한 메일 호스트를 가지고 있어야 합니다. 
+---
+= AutoSupport
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+AutoSupport는 시스템의 상태를 능동적으로 모니터링하고 NetApp 기술 지원, 내부 지원 조직 및 지원 파트너에게 메시지를 자동으로 보내는 메커니즘입니다.
+
+스토리지 시스템을 처음 구성할 때 AutoSupport가 기본적으로 설정됩니다. AutoSupport는 AutoSupport가 활성화된 후 24시간 후에 기술 지원 부서에 메시지를 보내기 시작합니다.
+
+배포 시에만 AutoSupport를 활성화 또는 비활성화할 수 있습니다. 활성화 상태로 두는 것이 좋습니다. AutoSupport를 활성화하면 스토리지 시스템에서 문제가 발생할 경우 문제를 신속하게 확인하고 해결할 수 있습니다. 기본적으로 시스템에서는 AutoSupport를 사용하지 않도록 설정하더라도 AutoSupport 정보를 수집하여 로컬에 저장합니다.
+성공적인 전송을 위해 네트워크에서 216.240.21.18//support.netapp.com URL을 화이트리스트해야 합니다.

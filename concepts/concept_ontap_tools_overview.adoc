@@ -1,0 +1,31 @@
+---
+permalink: concepts/concept_ontap_tools_overview.html 
+sidebar: sidebar 
+keywords:  
+summary: VMware vSphere용 ONTAP 툴은 NetApp 스토리지 백엔드를 사용하는 VMware 환경에서 데이터 저장소 및 가상 머신의 프로비저닝을 관리합니다. 
+---
+= ONTAP 도구 개요
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+VMware vSphere용 ONTAP 툴은 NetApp 스토리지 백엔드를 사용하는 VMware 환경에서 데이터 저장소 및 가상 머신의 프로비저닝을 관리합니다. 관리자는 vCenter Server 내의 스토리지를 직접 관리할 수 있으므로 VMware 환경의 스토리지 및 데이터 관리가 간소화됩니다.
+
+VMware vSphere 10.0 릴리즈용 ONTAP 툴은 수평으로 확장 가능한 이벤트 기반
+마이크로서비스는 OVA(Open Virtual Appliance)로 구축됩니다. OVA(Open Virtual Appliance) 및 온프레미스용 SaaS(Software as a Service)와 같은 다양한 배포 폼 팩터로 패키지로 제공됩니다.
+
+VMware vSphere용 ONTAP 툴의 구성 요소:
+
+* 가상 머신 기능
+* VM 세분화를 위한 VASA 공급자
+* 스토리지 정책 기반 관리
+
+
+
+
+== ONTAP 툴 VASA Provider
+
+ONTAP 툴 VASA Provider는 VVOL(가상 볼륨)에 대한 대규모 요구사항을 지원합니다. NFS 프로토콜, iSCSI 프로토콜 및 OVA 구축을 지원합니다.
+VASA Provider for VMware는 ONTAP를 통해 VMware 구축을 통해 라이프사이클 관리를 제공하는 제품입니다.

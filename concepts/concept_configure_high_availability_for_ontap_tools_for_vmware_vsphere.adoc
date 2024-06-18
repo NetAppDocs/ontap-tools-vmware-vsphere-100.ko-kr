@@ -1,0 +1,33 @@
+---
+permalink: concepts/concept_configure_high_availability_for_ontap_tools_for_vmware_vsphere.html 
+sidebar: sidebar 
+keywords:  
+summary: 'ONTAP 툴은 고가용성 \(HA\) 구성을 지원하여 장애 시 ONTAP 툴의 무중단 기능을 제공합니다.' 
+---
+= ONTAP 툴에 대한 고가용성을 구성합니다
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP 툴은 고가용성(HA) 구성을 지원하여 장애 발생 시 ONTAP 툴의 무중단 기능을 제공합니다.
+
+ONTAP 툴은 VMware vSphere HA(고가용성) 기능과 vSphere FT(내결함성) 기능을 사용하여 고가용성을 제공합니다. 고가용성(HA) 솔루션을 통해 다음과 같은 원인으로 인한 운영 중단으로부터 신속하게 복구할 수 있습니다.
+
+* 호스트 오류입니다
++
+
+NOTE: 단일 노드 장애만 지원됩니다.
+
+* 네트워크 오류입니다
+* 가상 머신 장애(게스트 OS 장애)
+* 응용 프로그램(ONTAP 도구)이 충돌합니다
+
+
+고가용성을 제공하기 위해 ONTAP 툴에 대한 추가 구성이 필요하지 않습니다. 요구 사항에 따라 vCenter Server 및 ESXi 호스트만 VMware vSphere HA 기능 또는 vSphere FT 기능으로 구성해야 합니다. HA와 FT에는 모두 공유 스토리지와 함께 클러스터 호스트가 필요합니다. FT는 추가적인 요구 사항과 제한 사항이 있습니다.
+
+ONTAP 툴은 VMware vSphere HA 솔루션 및 vSphere FT 솔루션과 함께 ONTAP 툴 서비스를 항상 실행할 수 있도록 지원합니다.
+
+
+NOTE: vCenter HA는 ONTAP 툴에서 지원되지 않습니다.

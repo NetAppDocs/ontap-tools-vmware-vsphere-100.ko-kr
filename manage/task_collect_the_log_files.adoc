@@ -1,0 +1,28 @@
+---
+permalink: manage/task_collect_the_log_files.html 
+sidebar: sidebar 
+keywords:  
+summary: 'ONTAP 툴 그래픽 사용자 인터페이스\(GUI\)에서 사용 가능한 옵션을 통해 VMware vSphere용 ONTAP 툴에 대한 로그 파일을 수집할 수 있습니다. 기술 지원 부서에서 문제 해결을 위해 로그 파일을 수집하도록 요청할 수 있습니다.' 
+---
+= 로그 파일을 수집합니다
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+VMware vSphere용 ONTAP 툴에 대한 로그 파일은 ONTAP Tools Manager 사용자 인터페이스에서 사용할 수 있는 옵션을 통해 수집할 수 있습니다. 기술 지원 부서에서 문제 해결을 위해 로그 파일을 수집하도록 요청할 수 있습니다.
+
+* 단계 *
+
+. 을 시작합니다 `\https://loadBalanceIP:8443/virtualization/ui/` 구축하는 동안 제공된 ONTAP 도구 관리자 자격 증명을 사용하여 브라우저에서
+. 사이드바에서 * 로그 번들 * 을 선택합니다.
++
+이 작업은 몇 분 정도 걸릴 수 있습니다.
+
+. 로그 파일을 생성하려면 * generate * 를 선택하십시오.
+. 로그 번들에 대한 레이블을 입력하고 * 생성 * 을 선택합니다.
++
+tar.gz 파일을 다운로드하여 기술 지원 부서에 보내십시오.
+
+

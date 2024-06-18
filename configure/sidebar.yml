@@ -1,0 +1,24 @@
+---
+section: configure
+title: ONTAP 도구를 구성합니다
+entries:
+- title: 네트워크 액세스를 관리합니다
+  url: "/configure/ip_whitelisting.html"
+- title: 사용자 역할 및 권한을 구성합니다
+  url: "/configure/task_configure_user_role_and_privileges.html"
+- title: ONTAP 도구 관리자 사용자 인터페이스
+  url: "/configure/ontap_tools_manager_ui.html"
+- title: vCenter를 추가합니다
+  url: "/configure/add_vcenter.html"
+- title: 스토리지 백엔드를 추가합니다
+  url: "/configure/add_storage_backend.html"
+- title: 스토리지 백엔드를 vCenter에 연결합니다
+  url: "/configure/associate_storage_backend.html"
+- title: vCenter를 사용하는 온보드 스토리지 백엔드(SVM 또는 클러스터
+  url: "/configure/onboard_svm.html"
+- title: vCenter에 VASA Provider를 등록합니다
+  url: "/configure/register_vasa.html"
+- title: VVOL 데이터 저장소를 생성합니다
+  url: "/configure/create_vvols_datastore.html"
+- title: 등록된 SVM 확인
+  url: "/configure/verify_registered_svm.html"

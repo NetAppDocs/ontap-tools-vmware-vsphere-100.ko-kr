@@ -1,0 +1,23 @@
+---
+permalink: configure/verify_registered_svm.html 
+sidebar: sidebar 
+keywords:  
+summary: 온보딩된 SVM이 vCenter UI의 VASA Provider 아래에 표시되는지 확인합니다. 
+---
+= 등록된 SVM 확인
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+온보딩된 SVM이 vCenter UI의 VASA Provider 아래에 표시되는지 확인합니다.
+
+* 단계 *
+
+. vCenter Server 로 이동합니다.
+. 관리자 자격 증명으로 로그인합니다.
+. Storage Providers * 를 선택합니다.
+. 구성 * 을 선택합니다.
+. 스토리지 공급자/스토리지 백엔드에서 온보딩된 SVM이 올바르게 나열되는지 확인합니다.
+
