@@ -818,7 +818,6 @@ API에 대한 x-auth를 전달해야 합니다. Swagger의 Auth 아래에 추가
   <block id="6b50b8836085008a8950ddeafeb7453a" category="list-text">모든 호스트에서 인증서를 새로 고칩니다.</block>
   <block id="8d1fe487abd8a4fd3b25772f93b38695" category="list-text">데이터 저장소(DS) 및 가상 머신(VM) 작업을 수행하기 전에 잠시 기다립니다. 대기 시간은 설정에 있는 호스트, DS 및 VM의 수에 따라 다릅니다. 기다리지 않으면 작업이 간헐적으로 실패할 수 있습니다.</block>
   <block id="8f7be3c874feb6ef0fd5f20afd8d5fbb" category="sidebar">VMware vSphere용 ONTAP 툴을 사용하면 vCenter Server 환경에서 가상 데이터 저장소를 구성, 관리 및 보호할 수 있습니다.</block>
-  <block id="46c4d9bfa1c229940459326940489ab0" category="sidebar">VMware vSphere용 ONTAP 툴 설명서</block>
   <block id="be11c74c1dd7f307bb80183a90dc2067" category="sidebar">시작하십시오</block>
   <block id="da951ef1610be90b45b31baf7b25b179" category="sidebar">VMware vSphere용 ONTAP 툴에 대해 자세히 알아보십시오</block>
   <block id="3d7fe3e43f9f24fffe5ed0d546d12f13" category="sidebar">ONTAP 툴 구축</block>
@@ -840,4 +839,5 @@ API에 대한 x-auth를 전달해야 합니다. Swagger의 Auth 아래에 추가
   <block id="4226794a7bb33ab0a2309e30c07c9031" category="sidebar">ONTAP 툴 관리</block>
   <block id="956040396bc93fbe70e3c9e235f5bfdb" category="sidebar">ONTAP 툴 유지보수 콘솔에 액세스합니다</block>
   <block id="1fa54bab7f1f7a04eb85d45383a68d04" category="sidebar">최신 ONTAP 도구 버전으로 마이그레이션하십시오</block>
+  <block id="70805c0934ed6aecfa95bd2f05ac18f9" category="sidebar">VMware vSphere 10.0용 ONTAP 툴 설명서</block>
 </blocks>
